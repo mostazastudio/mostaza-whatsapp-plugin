@@ -6,7 +6,7 @@ const WidgetProvider = ({children}) =>{
 
     const [whatsappOpen, setWhatsappOpen] = useState(false)
     const [utms, setUtms]                 = useState({})
-    const [, setWhatsappNumber] = useState("")
+    const [whatsappNumber, setWhatsappNumber] = useState("")
 
 
     const fetchWhatsappNumber = (numero) => {
