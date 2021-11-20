@@ -57,7 +57,7 @@ const WhatsappForm = () => {
     }
 
     return (
-        <form className="form-whatsapp" onSubmit={handleSubmit()}>
+        <form className="form-whatsapp" onSubmit={handleSubmit}>
             <div className={toggleWhatsapp(whatsappOpen)} id="form-global">
                 <div className="row">
                     <h3>¿Quieres contactar un asesor?</h3>
