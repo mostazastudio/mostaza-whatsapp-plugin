@@ -13,8 +13,8 @@ module.exports ={
         library:{
             name:"mostazaWhatsaapPlugin",
             type:"umd",
-            export:"default"
-            /*umdNamedDefine:true*/
+            export:"default",
+            umdNamedDefine:true
         },
         publicPath:""
     },
