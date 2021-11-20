@@ -7,7 +7,6 @@ const WhatsappForm = () => {
 
     const { whatsappOpen, openWhatsapp, utms, whatsappNumber } = useContext(WidgetContext)
     const {token, fetchToken} = useContext(LoginContext)
-
     const [nombre, setNombre] = useState("")
     const [celular, setCelular]  = useState("")
     const [motivo, setMotivo] = useState("")
@@ -38,12 +37,9 @@ const WhatsappForm = () => {
 
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
-        
         e.preventDefault()
         sendWhatsappData()
-        const { whatsappNumber } = useContext(WidgetContext)
-        console.log(whatsappNumber)
-        window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${motivo}`, '_blank').focus()
+        window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${motivo}`, '_blank').focus()
     }
 
     const toggleWhatsapp = (estado) => {

@@ -5,10 +5,6 @@ import WidgetProvider from "./context/widgetContext";
 import LoginProvider from "./context/loginContext";
 
 const Widget = (contraseña, numero) =>{
-
-    console.log(contraseña)
-    console.log("este es el whatsapp "+numero)
-
     ReactDOM.render(
         <LoginProvider >
         <WidgetProvider>
