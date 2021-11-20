@@ -38,6 +38,7 @@ const WhatsappForm = () => {
 
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
+        console.log(whatsappNumber)
         e.preventDefault()
         sendWhatsappData()
         window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${motivo}`, '_blank').focus()
