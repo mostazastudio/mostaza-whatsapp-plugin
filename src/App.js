@@ -7,7 +7,7 @@ import { LoginContext } from './context/loginContext';
 
 const App = (props) => {
 
-    const { utms, processUtms } = useContext(WidgetContext)
+    const { utms, processUtms, fetchWhatsappNumber } = useContext(WidgetContext)
     const { fetchPassword } = useContext (LoginContext)
 
     useEffect(()=>{
@@ -25,6 +25,11 @@ const App = (props) => {
     useEffect(()=>{
         fetchPassword(props.password)
     })
+
+    useEffect(()=>{
+        fetchWhatsappNumber(props.whatsapp)
+    })
+
 
     return (
         <div className="container">

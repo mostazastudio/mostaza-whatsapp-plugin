@@ -4,14 +4,14 @@ import App from "./App"
 import WidgetProvider from "./context/widgetContext";
 import LoginProvider from "./context/loginContext";
 
-const Widget = (contraseña) =>{
+const Widget = (contraseña, numero) =>{
 
     console.log(contraseña)
 
     ReactDOM.render(
         <LoginProvider >
         <WidgetProvider>
-          <App password={contraseña} />
+          <App password={contraseña} whatsapp={numero} />
         </WidgetProvider>
         </LoginProvider>,
       document.getElementById('mostaza-whatsapp-plugin')

@@ -6,6 +6,12 @@ const WidgetProvider = ({children}) =>{
 
     const [whatsappOpen, setWhatsappOpen] = useState(false)
     const [utms, setUtms]                 = useState({})
+    const [, setWhatsappNumber] = useState("")
+
+
+    const fetchWhatsappNumber = (numero) => {
+        setWhatsappNumber(numero)
+    }
 
     const openWhatsapp = () => {
         setWhatsappOpen(!whatsappOpen)
@@ -23,7 +29,7 @@ const WidgetProvider = ({children}) =>{
         setUtms(utmsDict)
     }
 
-    const data = { whatsappOpen, openWhatsapp, utms, processUtms }   
+    const data = { whatsappOpen, openWhatsapp, utms, processUtms, fetchWhatsappNumber }   
     
     return (
         <WidgetContext.Provider value={data}>
