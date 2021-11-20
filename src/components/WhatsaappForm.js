@@ -36,7 +36,7 @@ const WhatsappForm = () => {
 
     }
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e, whatsappNumber ) =>{
         console.log("empezando la funcion de handleSubmit")
         console.log(whatsappNumber)
         e.preventDefault()
@@ -55,7 +55,7 @@ const WhatsappForm = () => {
     }
 
     return (
-        <form className="form-whatsapp" onSubmit={handleSubmit}>
+        <form className="form-whatsapp" onSubmit={handleSubmit(whatsappNumber=whatsappNumber)}>
             <div className={toggleWhatsapp(whatsappOpen)} id="form-global">
                 <div className="row">
                     <h3>¿Quieres contactar un asesor?</h3>
