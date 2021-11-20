@@ -36,11 +36,13 @@ const WhatsappForm = () => {
 
     }
 
-    const handleSubmit = async (e, whatsappNumber ) =>{
+    const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
-        console.log(whatsappNumber)
+        
         e.preventDefault()
         sendWhatsappData()
+        const { whatsappNumber } = useContext(WidgetContext)
+        console.log(whatsappNumber)
         window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${motivo}`, '_blank').focus()
     }
 
@@ -55,7 +57,7 @@ const WhatsappForm = () => {
     }
 
     return (
-        <form className="form-whatsapp" onSubmit={handleSubmit(whatsappNumber=whatsappNumber)}>
+        <form className="form-whatsapp" onSubmit={handleSubmit()}>
             <div className={toggleWhatsapp(whatsappOpen)} id="form-global">
                 <div className="row">
                     <h3>¿Quieres contactar un asesor?</h3>
