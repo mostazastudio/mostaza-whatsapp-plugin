@@ -6,14 +6,14 @@ import LoginProvider from "./context/loginContext";
 
 const Widget = (contraseña) =>{
 
+    console.log(contraseña)
+
     ReactDOM.render(
-      <React.StrictMode>
-        <LoginProvider password={contraseña}>
+        <LoginProvider >
         <WidgetProvider>
-          <App />
+          <App password={contraseña} />
         </WidgetProvider>
-        </LoginProvider>
-      </React.StrictMode>,
+        </LoginProvider>,
       document.getElementById('mostaza-whatsapp-plugin')
     );
 }

@@ -10,13 +10,13 @@ module.exports ={
     output:{
         path: path.resolve(__dirname, "../dist"),
         filename:"[name].[contenthash].js",
-        library:"mostazaWhatsaapPlugin"
-        /*library:{
+        /*library : "mostazaWhatsaapPlugin"*/
+        library:{
             name:"mostazaWhatsaapPlugin",
             type:"umd",
             export:"default",
             umdNamedDefine:true
-        }*/,
+        },
         publicPath:""
     },
     module:{

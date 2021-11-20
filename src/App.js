@@ -3,10 +3,12 @@ import InitialButton from './components/InitialButton';
 import WhatsappForm from './components/WhatsaappForm';
 import "./App.css"
 import { WidgetContext } from './context/widgetContext';
+import { LoginContext } from './context/loginContext';
 
-const App = () => {
+const App = (props) => {
 
     const { utms, processUtms } = useContext(WidgetContext)
+    const { fetchPassword } = useContext (LoginContext)
 
     useEffect(()=>{
         if (sessionStorage.getItem("utmsConcatenated")){
@@ -19,6 +21,10 @@ const App = () => {
             processUtms(queryString)
         }
     },[])
+
+    useEffect(()=>{
+        fetchPassword(props.password)
+    })
 
     return (
         <div className="container">

@@ -17,7 +17,8 @@ const devConfig = {
                     test:/.(css)$/,
                 }
         ]
-    }
+    },
+    devtool:"eval-source-map",
 }
 
 module.exports = merge(common, devConfig)

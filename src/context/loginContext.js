@@ -3,19 +3,25 @@ import React, { createContext, useEffect, useState } from 'react';
 const LoginContext = createContext();
 
 
-const LoginProvider = ({children}, props) => {
+const LoginProvider = ({children}) => {
 
     const [token, setToken] = useState(sessionStorage.getItem("whatsappWidgetToken"));
     const [errorMessage, setErrorMessage] = useState("")
+    const [password, setPassword] = useState("");
+
+
+    const fetchPassword = (clave) => {
+        setPassword(clave)
+    }
     
-    
-    const fetchToken = async (password) => {
+    const fetchToken = async () => {
         console.log("empezando la funcion fetchToken")
         const username = window.location.hostname
+        console.log(username)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded"},
-            body: JSON.stringify(`grant_type=&username=${username}&password=${props.password}&scope=&client_id=&client_secret=`)
+            body: JSON.stringify(`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`)
         };
         console.log("voy a hacer la peticion de fetchToken")
         const response = await fetch("http://127.0.0.1:8000/marcas/token", requestOptions);
@@ -30,7 +36,7 @@ const LoginProvider = ({children}, props) => {
         }
     }
 
-    const data = {token, setToken, fetchToken}
+    const data = {token, setToken, fetchToken, fetchPassword}
 
     return (
         <LoginContext.Provider value={data}>
