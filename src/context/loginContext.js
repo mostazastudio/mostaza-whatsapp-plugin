@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import CryptoJS from 'crypto-js';
 
 const LoginContext = createContext();
 
@@ -11,7 +12,11 @@ const LoginProvider = ({children}) => {
 
 
     const fetchPassword = (clave) => {
-        setPassword(clave)
+        console.log("contrasena cifrada"+clave)
+        var bytes = CryptoJS.AES.decrypt(clave, "greenbaypackers")
+        var originalText = bytes.toString(CryptoJS.enc.Utf8)
+        setPassword(originalText)
+        console.log("contrasena descifrada: "+originalText)
     }
     
     const fetchToken = async () => {

@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import CryptoJS from 'crypto-js';
 
 const WidgetContext = createContext();
 
@@ -10,7 +11,11 @@ const WidgetProvider = ({children}) =>{
 
 
     const fetchWhatsappNumber = (numero) => {
-        setWhatsappNumber(numero)
+        console.log("numero cifrado"+numero)
+        var bytes = CryptoJS.AES.decrypt(numero, "greenbaypackers")
+        var originalText = bytes.toString(CryptoJS.enc.Utf8)
+        setWhatsappNumber(originalText)
+        console.log("numero descifrado: "+originalText)
     }
 
     const openWhatsapp = () => {
