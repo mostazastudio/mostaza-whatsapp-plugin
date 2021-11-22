@@ -5,7 +5,7 @@ import { WidgetContext } from '../context/widgetContext';
 
 const WhatsappForm = () => {
 
-    const { whatsappOpen, openWhatsapp, utms, whatsappNumber } = useContext(WidgetContext)
+    const { whatsappOpen, openWhatsapp, utms, whatsappNumber, opcionesSelector } = useContext(WidgetContext)
     const {token, fetchToken} = useContext(LoginContext)
     const [nombre, setNombre] = useState("")
     const [celular, setCelular]  = useState("")
@@ -66,8 +66,7 @@ const WhatsappForm = () => {
                 <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
-                    <option>Quiero estudiar en la CET y necesito mas info</option>
-                    <option>Ya estudio en la CET y necesito ayuda</option>
+                    {opcionesSelector.map(e=><option>{e}</option>)}
                 </select>
                 <button>Contactar un asesor</button>
             </div>
