@@ -64,7 +64,7 @@ const WhatsappForm = () => {
                 <input type="text" id="text_field" onChange={(e) => setNombre(e.target.value)} />
                 <label htmlFor="number_field">Tu Celular</label>
                 <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
-                <label htmlFor="select_field">Quieres ayuda de un asesor para: {opcionesSelector}</label>
+                <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
                     {opcionesSelector.map(e => <option>{e.opcion}</option>)}
                 </select>
