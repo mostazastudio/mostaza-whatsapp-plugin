@@ -7,7 +7,7 @@ import { LoginContext } from './context/loginContext';
 
 const App = (props) => {
 
-    const { utms, processUtms, fetchWhatsappNumber, fetchOpcionesSelector, opcionesSelector } = useContext(WidgetContext)
+    const { utms, processUtms, fetchWhatsappNumber/*, fetchOpcionesSelector, opcionesSelector*/ } = useContext(WidgetContext)
     const { fetchPassword } = useContext (LoginContext)
 
     useEffect(()=>{
@@ -30,14 +30,14 @@ const App = (props) => {
         fetchWhatsappNumber(props.whatsapp)
     })
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         fetchOpcionesSelector(props.selector)
-    })
+    })*/
 
 
     return (
         <div className="container">
-            <WhatsappForm></WhatsappForm>
+            <WhatsappForm seleccion={props.selector}></WhatsappForm>
             <InitialButton></InitialButton>
         </div>
     );

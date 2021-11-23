@@ -3,9 +3,9 @@ import "../App.css"
 import { LoginContext } from '../context/loginContext';
 import { WidgetContext } from '../context/widgetContext';
 
-const WhatsappForm = () => {
+const WhatsappForm = (props) => {
 
-    const { whatsappOpen, openWhatsapp, utms, whatsappNumber, opcionesSelector } = useContext(WidgetContext)
+    const { whatsappOpen, openWhatsapp, utms, whatsappNumber/*, opcionesSelector*/ } = useContext(WidgetContext)
     const {token, fetchToken} = useContext(LoginContext)
     const [nombre, setNombre] = useState("")
     const [celular, setCelular]  = useState("")
@@ -66,7 +66,7 @@ const WhatsappForm = () => {
                 <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
-                    {opcionesSelector.map(e => <option>{e.opcion}</option>)}
+                    {props.seleccion.map(e => <option>{e.opcion}</option>)}
                 </select>
                 <button>Contactar un asesor</button>
             </div>

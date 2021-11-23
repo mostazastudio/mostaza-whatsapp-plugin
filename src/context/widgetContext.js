@@ -8,7 +8,7 @@ const WidgetProvider = ({children}) =>{
     const [whatsappOpen, setWhatsappOpen]           = useState(false)
     const [utms, setUtms]                           = useState({})
     const [whatsappNumber, setWhatsappNumber]       = useState("")
-    const [opcionesSelector, setOpcionesSelector]   = useState([{}])
+    /*const [opcionesSelector, setOpcionesSelector]   = useState([{}])*/
 
 
     const fetchWhatsappNumber = (numero) => {
@@ -19,13 +19,13 @@ const WidgetProvider = ({children}) =>{
         console.log("numero descifrado: "+originalText)
     }
 
-    const fetchOpcionesSelector = (lista_opciones) =>{
+    /*const fetchOpcionesSelector = (lista_opciones) =>{
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
         var dss = JSON.parse(decryptedData)
         console.log(typeof dss)
         setOpcionesSelector(dss)
-    }
+    }*/
 
     const openWhatsapp = () => {
         setWhatsappOpen(!whatsappOpen)
@@ -43,7 +43,7 @@ const WidgetProvider = ({children}) =>{
         setUtms(utmsDict)
     }
 
-    const data = { whatsappOpen, openWhatsapp, utms, processUtms, fetchWhatsappNumber, whatsappNumber, fetchOpcionesSelector, opcionesSelector }   
+    const data = { whatsappOpen, openWhatsapp, utms, processUtms, fetchWhatsappNumber, whatsappNumber /*, fetchOpcionesSelector, opcionesSelector*/ }   
     
     return (
         <WidgetContext.Provider value={data}>
