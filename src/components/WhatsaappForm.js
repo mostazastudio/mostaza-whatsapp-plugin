@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import "../App.css"
 import { LoginContext } from '../context/loginContext';
 import { WidgetContext } from '../context/widgetContext';
+import CryptoJS from 'crypto-js';
 
 const WhatsappForm = (props) => {
 
