@@ -32,7 +32,7 @@ const App = (props) => {
 
     useEffect(()=>{
         fetchOpcionesSelector(props.selector)
-    },[opcionesSelector])
+    })
 
 
     return (
