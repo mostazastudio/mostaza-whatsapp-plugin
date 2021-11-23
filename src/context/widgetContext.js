@@ -22,6 +22,7 @@ const WidgetProvider = ({children}) =>{
     const fetchOpcionesSelector = (lista_opciones) =>{
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        console.log(typeof decryptedData)
         setOpcionesSelector(decryptedData)
     }
 
