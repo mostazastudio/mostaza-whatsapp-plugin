@@ -52,6 +52,14 @@ const WhatsappForm = (props) => {
         return clase
     }
 
+    const fetchOpcionesSelector = (lista_opciones) =>{
+        var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
+        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        var dss = JSON.parse(decryptedData)
+        console.log(typeof dss)
+        return dss
+    }
+    
     return (
         <form className="form-whatsapp" onSubmit={handleSubmit}>
             <div className={toggleWhatsapp(whatsappOpen)} id="form-global">
@@ -66,7 +74,7 @@ const WhatsappForm = (props) => {
                 <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
-                    {props.seleccion.map(e => <option>{e.opcion}</option>)}
+                    {fetchOpcionesSelector(props.seleccion).map(e => <option>{e.opcion}</option>)}
                 </select>
                 <button>Contactar un asesor</button>
             </div>
