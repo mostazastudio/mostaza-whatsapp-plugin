@@ -75,6 +75,7 @@ const WhatsappForm = (props) => {
                 <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
+                    <option disabled selected>Seleccionar:</option>
                     {fetchOpcionesSelector(props.seleccion).map(e => <option>{e.opcion}</option>)}
                 </select>
                 <button>Contactar un asesor</button>
