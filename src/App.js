@@ -23,6 +23,7 @@ const App = (props) => {
     },[])
 
     useEffect(()=>{
+        console.log("render")
         fetchPassword(props.password)
         fetchWhatsappNumber(props.whatsapp)
     }, [password,whatsappNumber])
