@@ -25,12 +25,16 @@ const App = (props) => {
     useEffect(()=>{
         console.log("render")
         fetchPassword(props.password)
+    }, [password])
+
+    useEffect(()=>{
         fetchWhatsappNumber(props.whatsapp)
-    }, [password,whatsappNumber])
+    },[whatsappNumber])
 
     /*useEffect(()=>{
         fetchOpcionesSelector(props.selector)
     })*/
+
 
     return (
         <div className="container">
