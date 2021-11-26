@@ -12,7 +12,7 @@ const WidgetProvider = ({children}) =>{
 
 
     const fetchWhatsappNumber = (numero) => {
-        console.log("numero cifrado: "+numero)
+        console.log("numerooo cifrado: "+numero)
         var bytes = CryptoJS.AES.decrypt(numero, "greenbaypackers")
         var originalText = bytes.toString(CryptoJS.enc.Utf8)
         console.log("numero descifrado: "+originalText)
