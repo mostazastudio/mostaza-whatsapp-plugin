@@ -11,7 +11,11 @@ const App = (props) => {
     const { fetchPassword, password } = useContext (LoginContext)
 
     useEffect(()=>{
-        console.log("useEffect para las UTMs")
+        console.log("renderizada")
+    })
+
+    useEffect(()=>{
+
         if (sessionStorage.getItem("utmsConcatenated")){
             let utmsConcat = sessionStorage.getItem('utmsConcatenated')
             processUtms(utmsConcat)
@@ -21,10 +25,10 @@ const App = (props) => {
             sessionStorage.setItem("utmsConcatenated",queryString)
             processUtms(queryString)
         }
+        console.log("useEffect para las UTMs")
     },[])
 
     useEffect(()=>{
-        console.log("render")
         fetchPassword(props.password)
     }, [password])
 
