@@ -20,6 +20,8 @@ const LoginProvider = ({children}) => {
     
     const fetchToken = async () => {
         const username = window.location.hostname
+        console.log(username)
+        console.log(password)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded"},
