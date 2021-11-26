@@ -37,6 +37,17 @@ const WhatsappForm = (props) => {
 
     }
 
+    const validateForm = async (values) =>{
+        let errors = {}
+        if (values.nombre.length < 2){
+            errors.nombre = "Por favor ingresa tu nombre"
+        }
+
+        if (values.celular.length < 10){
+
+        }
+    }
+
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
@@ -72,7 +83,7 @@ const WhatsappForm = (props) => {
                 <label htmlFor="text_field">Tu Nombre</label>
                 <input type="text" id="text_field" onChange={(e) => setNombre(e.target.value)} />
                 <label htmlFor="number_field">Tu Celular</label>
-                <input type="text" id="number_field" onChange={(e) => setCelular(e.target.value)} />
+                <input type="number" id="number_field" onChange={(e) => setCelular(e.target.value)} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
                     <option disabled selected>Seleccionar:</option>
