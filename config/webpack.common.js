@@ -9,7 +9,7 @@ module.exports ={
     entry:"./src/index.js",
     output:{
         path: path.resolve(__dirname, "../dist"),
-        filename:"mostaza_whatsapp_plugin.js",
+        filename:"[name].[contenthash].js",
         /*library : "mostazaWhatsaapPlugin"*/
         library:{
             name:"mostazaWhatsaapPlugin",
