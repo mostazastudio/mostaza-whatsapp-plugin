@@ -24,16 +24,12 @@ const App = (props) => {
 
     useEffect(()=>{
         fetchPassword(props.password)
-    }, [password])
-
-    useEffect(()=>{
         fetchWhatsappNumber(props.whatsapp)
-    },[whatsappNumber])
+    }, [password,whatsappNumber])
 
     /*useEffect(()=>{
         fetchOpcionesSelector(props.selector)
     })*/
-
 
     return (
         <div className="container">
