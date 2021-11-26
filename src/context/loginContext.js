@@ -14,9 +14,9 @@ const LoginProvider = ({children}) => {
     const fetchPassword = (clave) => {
         console.log("contrasena cifrada: "+clave)
         console.log(typeof clave)
-        var bytes = CryptoJS.AES.decrypt(clave, "greenbaypackers")
-        console.log(bytes)
-        var originalText = bytes.toString(CryptoJS.enc.Utf8)
+        var decripted = CryptoJS.AES.decrypt(clave, "greenbaypackers")
+        console.log(decripted)
+        var originalText = decripted.toString(CryptoJS.enc.Utf8)
         console.log("contraseña descrifrada: "+originalText)
         setPassword(originalText)
     }

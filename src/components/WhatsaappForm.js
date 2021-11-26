@@ -23,6 +23,7 @@ const WhatsappForm = (props) => {
             headers: { "Content-Type": "application/json", Authorization: "Bearer " + tokenSession },
             body: JSON.stringify({"nombre":nombre,"celular":celular,"tipo_contacto":motivo,...utms})
         }
+        console.log(requestOptions)
         console.log("voy a hacer la peticion de sendWhatsappData")
         const response = await fetch("http://127.0.0.1:8000/prospectos", requestOptions)
         console.log("ya hice la peticion de sendWhatsappData")
