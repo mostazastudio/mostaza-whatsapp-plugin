@@ -11,6 +11,7 @@ const App = (props) => {
     const { fetchPassword, password } = useContext (LoginContext)
 
     useEffect(()=>{
+        console.log("useEffect para las UTMs")
         if (sessionStorage.getItem("utmsConcatenated")){
             let utmsConcat = sessionStorage.getItem('utmsConcatenated')
             processUtms(utmsConcat)
