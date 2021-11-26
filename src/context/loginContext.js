@@ -15,6 +15,7 @@ const LoginProvider = ({children}) => {
         console.log("contrasena cifrada"+clave)
         var bytes = CryptoJS.AES.decrypt(clave, "greenbaypackers")
         var originalText = bytes.toString(CryptoJS.enc.Utf8)
+        console.log(originalText)
         setPassword(originalText)
     }
     
