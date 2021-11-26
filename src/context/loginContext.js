@@ -16,22 +16,17 @@ const LoginProvider = ({children}) => {
         var bytes = CryptoJS.AES.decrypt(clave, "greenbaypackers")
         var originalText = bytes.toString(CryptoJS.enc.Utf8)
         setPassword(originalText)
-        console.log("contrasena descifrada: "+originalText)
     }
     
     const fetchToken = async () => {
-        console.log("empezando la funcion fetchToken")
         const username = window.location.hostname
-        console.log(username)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded"},
             body: JSON.stringify(`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`)
         };
-        console.log("voy a hacer la peticion de fetchToken")
         const response = await fetch("http://127.0.0.1:8000/marcas/token", requestOptions);
         const data = await response.json();
-        console.log("ya hice la peticion de fetchToken y hubo una respuesta")
 
         if(!response.ok){
             setErrorMessage(data.detail)

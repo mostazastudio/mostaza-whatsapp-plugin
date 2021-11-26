@@ -57,7 +57,6 @@ const WhatsappForm = (props) => {
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
         var dss = JSON.parse(decryptedData)
-        console.log(typeof dss)
         return dss
     }
     

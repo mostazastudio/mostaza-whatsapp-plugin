@@ -16,7 +16,6 @@ const WidgetProvider = ({children}) =>{
         var bytes = CryptoJS.AES.decrypt(numero, "greenbaypackers")
         var originalText = bytes.toString(CryptoJS.enc.Utf8)
         setWhatsappNumber(originalText)
-        console.log("numero descifrado: "+originalText)
     }
 
     /*const fetchOpcionesSelector = (lista_opciones) =>{
