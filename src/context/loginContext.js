@@ -27,6 +27,7 @@ const LoginProvider = ({children}) => {
         };
         const response = await fetch("http://127.0.0.1:8000/marcas/token", requestOptions);
         const data = await response.json();
+        console.log(data)
 
         if(!response.ok){
             setErrorMessage(data.detail)
