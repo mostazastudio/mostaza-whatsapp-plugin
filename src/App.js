@@ -19,13 +19,14 @@ const App = (props) => {
         if (sessionStorage.getItem("utmsConcatenated")){
             let utmsConcat = sessionStorage.getItem('utmsConcatenated')
             processUtms(utmsConcat)
+            console.log("Las UTMS son: "+utmsConcat)
 
         }else{
             let queryString = window.location.search;
             sessionStorage.setItem("utmsConcatenated",queryString)
             processUtms(queryString)
+            console.log("Las UTMS son: "+queryString)
         }
-        console.log("useEffect para las UTMs")
     },[])
 
     useEffect(()=>{
