@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { LoginContext } from '../context/loginContext';
+import { WidgetContext } from "../context/widgetContext";
+
 
 
 const useForm = (validate) =>{
@@ -14,6 +16,7 @@ const useForm = (validate) =>{
     const [whatsappDatasended, setWhatsappDatasended] = useState(false)
 
     const {token, fetchToken} = useContext(LoginContext)
+    const {utms, whatsappNumber} = useContext(WidgetContext)
 
     const sendWhatsappData = async () => {
         console.log("empezando la funcion de sendWhatsappData")
