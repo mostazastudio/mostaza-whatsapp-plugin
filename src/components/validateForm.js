@@ -6,7 +6,7 @@ export default function validateForm(values){
     }
     if (values.celular.length < 10){
         errors.celular = "Por favor ingresa un celular valido"
-    } else if (!isNaN(values.celular)) {
+    } else if (isNaN(values.celular)) {
         errors.celular = "Por favor ingresa un celular valido"
     }
 
