@@ -12,7 +12,7 @@ const useForm = (validate) =>{
     })
 
     const [formErrors, setFormErrors] = useState({})
-    const[isSubmitting, setIsSubmitting] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const [whatsappErrors, setWhatsappErrors] = useState("")
     const [whatsappDatasended, setWhatsappDatasended] = useState(false)
 
@@ -53,17 +53,17 @@ const useForm = (validate) =>{
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
-        console.log("antes de setear los errores del form")
         setFormErrors(validate(values));
-        console.log("ya se setearon los errores del form")
-        console.log(formErrors)
-        console.log(Object.keys(formErrors).length)
-        if(Object.keys(formErrors).length === 0 ){
+        setIsSubmitting(true);
+
+    }
+
+    useEffect(()=>{
+        if(Object.keys(formErrors).length === 0 && isSubmitting){
             sendWhatsappData()
             window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
         }
-
-    }
+    })
 
     return {handleChange, values, handleSubmit, formErrors};
 }
