@@ -4,7 +4,7 @@ import { WidgetContext } from "../context/widgetContext";
 
 
 
-const useForm = (callback,validate) =>{
+const useForm = (validate) =>{
     const [values, setValues] = useState({
         nombre: "",
         celular:"",
