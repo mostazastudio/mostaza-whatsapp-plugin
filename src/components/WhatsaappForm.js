@@ -25,10 +25,12 @@ const WhatsappForm = (props) => {
     const fetchOpcionesSelector = (lista_opciones) =>{
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
         var decryptedData = bytes.toString(CryptoJS.enc.Utf8)
+        console.log(decryptedData)
+        console.log(typeof decryptedData)
         var dss = JSON.parse(decryptedData)
         console.log(dss)
         console.log(typeof dss)
-        return [dss]
+        return dss
     }
     
     return (
@@ -44,11 +46,13 @@ const WhatsappForm = (props) => {
                 {formErrors.nombre && <p>{formErrors.nombre}</p>}
                 <label htmlFor="number_field">Tu Celular</label>
                 <input type="text" id="number_field" name="celular" value={values.celular}  onChange={handleChange} />
+                {formErrors.celular && <p>{formErrors.celular}</p>}
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
                 <select id="select_field" name="motivo" value={values.motivo}  onChange={handleChange}>
                     <option disabled selected>Seleccionar:</option>
                     {fetchOpcionesSelector(props.seleccion).map(e => <option>{e.opcion}</option>)}
                 </select>
+                {formErrors.motivo && <p>{formErrors.motivo}</p>}
                 <button>Contactar un asesor</button>
             </div>
         </form>
