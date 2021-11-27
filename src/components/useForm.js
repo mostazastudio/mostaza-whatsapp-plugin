@@ -63,7 +63,7 @@ const useForm = (validate) =>{
             sendWhatsappData()
             window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
         }
-    })
+    },[formErrors])
 
     return {handleChange, values, handleSubmit, formErrors};
 }
