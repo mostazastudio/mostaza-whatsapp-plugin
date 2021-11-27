@@ -1,59 +1,15 @@
 import React, { useContext, useState } from 'react';
+import useForm from './useForm';
+import validate from './validateForm';
 import "../App.css"
-import { LoginContext } from '../context/loginContext';
 import { WidgetContext } from '../context/widgetContext';
 import CryptoJS from 'crypto-js';
 
+
 const WhatsappForm = (props) => {
 
-    const { whatsappOpen, openWhatsapp, utms, whatsappNumber/*, opcionesSelector*/ } = useContext(WidgetContext)
-    const {token, fetchToken} = useContext(LoginContext)
-    const [nombre, setNombre] = useState("")
-    const [celular, setCelular]  = useState("")
-    const [motivo, setMotivo] = useState("")
-    const [errorMessage, setErrorMessage] = useState("")
-    const [whatsappDatasended, setWhatsappDatasended] = useState(false)
-
-    const sendWhatsappData = async () => {
-        console.log("empezando la funcion de sendWhatsappData")
-        const pedir_token = await fetchToken()
-        const tokenSession = sessionStorage.getItem("whatsappWidgetToken")
-        const requestOptions = {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Authorization: "Bearer " + tokenSession },
-            body: JSON.stringify({"nombre":nombre,"celular":celular,"tipo_contacto":motivo,...utms})
-        }
-        console.log(requestOptions)
-        console.log("voy a hacer la peticion de sendWhatsappData")
-        const response = await fetch("http://127.0.0.1:8000/prospectos", requestOptions)
-        console.log("ya hice la peticion de sendWhatsappData")
-        const data = await response.json()
-
-        if(!response.ok){
-            setErrorMessage(data.detail);
-        }else{
-            setWhatsappDatasended(true)
-        }
-
-    }
-
-    const validateForm = async (values) =>{
-        let errors = {}
-        if (values.nombre.length < 2){
-            errors.nombre = "Por favor ingresa tu nombre"
-        }
-
-        if (values.celular.length < 10){
-
-        }
-    }
-
-    const handleSubmit = async (e) =>{
-        console.log("empezando la funcion de handleSubmit")
-        e.preventDefault()
-        sendWhatsappData()
-        window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${motivo}`, '_blank').focus()
-    }
+    const {handleChange, values, handleSubmit, formErrors} = useForm(validate);
+    const { whatsappOpen, openWhatsapp, utms, whatsappNumber} = useContext(WidgetContext)
 
     const toggleWhatsapp = (estado) => {
         var clase = ""
@@ -67,9 +23,10 @@ const WhatsappForm = (props) => {
 
     const fetchOpcionesSelector = (lista_opciones) =>{
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
-        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-        var dss = JSON.parse(decryptedData)
-        return dss
+        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+        console.log(decryptedData)
+        console.log(typeof decryptedData)
+        return decryptedData
     }
     
     return (
@@ -81,11 +38,12 @@ const WhatsappForm = (props) => {
                 </div>
                 <p>Completa tus datos y te contactaremos un un experto</p>
                 <label htmlFor="text_field">Tu Nombre</label>
-                <input type="text" id="text_field" onChange={(e) => setNombre(e.target.value)} />
+                <input type="text" id="text_field" name="nombre" value={values.nombre}  onChange={handleChange} />
+                {formErrors.nombre && <p>{formErrors.nombre}</p>}
                 <label htmlFor="number_field">Tu Celular</label>
-                <input type="number" id="number_field" onChange={(e) => setCelular(e.target.value)} />
+                <input type="text" id="number_field" name="celular" value={values.celular}  onChange={handleChange} />
                 <label htmlFor="select_field">Quieres ayuda de un asesor para:</label>
-                <select id="select_field" onChange={(e) => setMotivo(e.target.value)}>
+                <select id="select_field" name="motivo" value={values.motivo}  onChange={handleChange}>
                     <option disabled selected>Seleccionar:</option>
                     {fetchOpcionesSelector(props.seleccion).map(e => <option>{e.opcion}</option>)}
                 </select>

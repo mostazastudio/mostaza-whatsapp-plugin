@@ -37,11 +37,6 @@ const App = (props) => {
         fetchWhatsappNumber(props.whatsapp)
     },[whatsappNumber])
 
-    /*useEffect(()=>{
-        fetchOpcionesSelector(props.selector)
-    })*/
-
-
     return (
         <div className="container">
             <WhatsappForm seleccion={props.selector}></WhatsappForm>
