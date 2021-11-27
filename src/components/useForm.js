@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { LoginContext } from '../context/loginContext';
 import { WidgetContext } from "../context/widgetContext";
 
 
 
-const useForm = (validate) =>{
+const useForm = (callback,validate) =>{
     const [values, setValues] = useState({
         nombre: "",
         celular:"",
@@ -12,6 +12,7 @@ const useForm = (validate) =>{
     })
 
     const [formErrors, setFormErrors] = useState({})
+    const[isSubmitting, setIsSubmitting] = useState(false)
     const [whatsappErrors, setWhatsappErrors] = useState("")
     const [whatsappDatasended, setWhatsappDatasended] = useState(false)
 
@@ -53,10 +54,11 @@ const useForm = (validate) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
         setFormErrors(validate(values));
-        console.log(formErrors)
-        console.log(formErrors.length)
-        sendWhatsappData()
-        window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
+        if(Object.keys(formErrors).length === 0 ){
+            sendWhatsappData()
+            window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
+        }
+
     }
 
     return {handleChange, values, handleSubmit, formErrors};
