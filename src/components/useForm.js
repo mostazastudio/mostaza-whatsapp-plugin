@@ -38,21 +38,6 @@ const useForm = (validate) =>{
 
     }
 
-    const validateForm = async (values) =>{
-        let errors = {}
-        if (values.nombre.length < 2){
-            errors.nombre = "Por favor ingresa tu nombre"
-        }
-
-        if (values.celular.length < 10){
-            errors.celular = "Por favor ingresa un celular valido"
-        } else if (!isNaN(values.celular)) {
-            errors.celular = "Por favor ingresa un celular valido"
-        }
-
-        return errors
-    }
-
     const handleChange = e =>{
         const {name, value} = e.target
         setValues({
@@ -65,6 +50,8 @@ const useForm = (validate) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
         setFormErrors(validate(values));
+        console.log(formErrors)
+        console.log(formErrors.length)
         sendWhatsappData()
         window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
     }
