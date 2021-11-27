@@ -24,7 +24,7 @@ const WhatsappForm = (props) => {
 
     const fetchOpcionesSelector = (lista_opciones) =>{
         var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
-        var decryptedData = bytes.toString(CryptoJS.enc.Utf8)
+        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
         console.log(decryptedData)
         console.log(typeof decryptedData)
         var dss = JSON.parse(decryptedData)
