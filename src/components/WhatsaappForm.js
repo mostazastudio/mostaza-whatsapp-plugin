@@ -10,6 +10,7 @@ const WhatsappForm = (props) => {
 
     const {handleChange, values, handleSubmit, formErrors} = useForm(validate);
     const { whatsappOpen, openWhatsapp, utms, whatsappNumber} = useContext(WidgetContext)
+    const [motivos, setMotivos] = useState([])
 
     const toggleWhatsapp = (estado) => {
         var clase = ""
@@ -27,7 +28,7 @@ const WhatsappForm = (props) => {
         var dss = JSON.parse(decryptedData)
         console.log(dss)
         console.log(typeof dss)
-        return dss
+        return [dss]
     }
     
     return (
