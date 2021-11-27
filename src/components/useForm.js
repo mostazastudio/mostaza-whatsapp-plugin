@@ -53,6 +53,7 @@ const useForm = (callback,validate) =>{
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
+        console.log("antes de setear los errores del form")
         setFormErrors(validate(values));
         console.log("ya se setearon los errores del form")
         if(Object.keys(formErrors).length === 0 ){
