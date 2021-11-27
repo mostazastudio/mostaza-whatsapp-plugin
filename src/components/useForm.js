@@ -54,6 +54,7 @@ const useForm = (callback,validate) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
         setFormErrors(validate(values));
+        console.log("ya se setearon los errores del form")
         if(Object.keys(formErrors).length === 0 ){
             sendWhatsappData()
             window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
