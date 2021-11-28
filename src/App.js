@@ -38,11 +38,11 @@ const App = (props) => {
     }, [whatsappNumber])
 
     return (
-        <Fragment>
+        <div id="mostaza-sheloh-wp-widget">
             <WhatsappForm seleccion={props.selector}></WhatsappForm>
             <InitialButton></InitialButton>
             <div id="overlay" className={whatsappOpen ? " active" : ""}></div>
-        </Fragment>
+        </div>
     );
 };
 
