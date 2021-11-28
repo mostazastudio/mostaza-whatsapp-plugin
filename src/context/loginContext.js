@@ -30,7 +30,7 @@ const LoginProvider = ({children}) => {
             headers: { "Content-Type": "application/x-www-form-urlencoded"},
             body: JSON.stringify(`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`)
         };
-        const response = await fetch("http://127.0.0.1:8000/marcas/token", requestOptions);
+        const response = await fetch("https://sheloh-api-feca4.ondigitalocean.app/marcas/token", requestOptions);
         const data = await response.json();
         console.log(data)
 

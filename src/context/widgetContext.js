@@ -33,7 +33,7 @@ const WidgetProvider = ({children}) =>{
         setUtms(utmsDict)
     }
 
-    const data = { whatsappOpen, openWhatsapp, utms, processUtms, fetchWhatsappNumber, whatsappNumber /*, fetchOpcionesSelector, opcionesSelector*/ }   
+    const data = { whatsappOpen, openWhatsapp, utms, processUtms, fetchWhatsappNumber, whatsappNumber  }   
     
     return (
         <WidgetContext.Provider value={data}>
