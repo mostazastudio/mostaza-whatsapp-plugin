@@ -1,25 +1,17 @@
 import React, { useContext } from 'react';
-import "../App.css"
+import '../whatsappForm.css';
 import { WidgetContext } from '../context/widgetContext';
+import logo from "./whatsapp-logo.svg"
 
 const InitialButton = () => {
 
-    const { whatsappOpen, openWhatsapp } = useContext(WidgetContext)
-
-    const toggleWhatsapp = (estado) =>{
-        var clase = ""
-        if(estado){
-            clase = "boton close"
-        }else{
-            clase = "boton"
-        }
-        return clase
-    }
+    const { openWhatsapp } = useContext(WidgetContext)
 
     return (
-        <div className={toggleWhatsapp(whatsappOpen)} id="initial-button">
-            <button id="boton-inicial" onClick={() => openWhatsapp()}>Chatea con nosotrossss</button>
-        </div>
+    <div className="btn-widget-wp" onClick={() => openWhatsapp()}>
+        <img src={logo} alt="WhatsApp logo"/>
+        <span>Contacta un asesor</span>
+    </div>
     );
 };
 

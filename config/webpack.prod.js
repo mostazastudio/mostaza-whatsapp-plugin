@@ -16,7 +16,13 @@ const prodConfig = {
         rules:[{
             use:[MiniCssExtractPlugin.loader, "css-loader"],
             test:/.(css)$/,
-        }]
+        },
+        {
+            type: "asset",    
+            test:/\.(svg)$/i,
+        }
+    
+    ]
     }
 }
 

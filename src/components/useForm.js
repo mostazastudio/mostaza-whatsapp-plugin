@@ -55,8 +55,6 @@ const useForm = (validate) =>{
         e.preventDefault()
         setFormErrors(validate(values));
         setIsSubmitting(true);
-        console.log(isSubmitting)
-
     }
 
     useEffect(()=>{

@@ -1,47 +1,48 @@
-import React, { useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import InitialButton from './components/InitialButton';
 import WhatsappForm from './components/WhatsaappForm';
-import "./App.css"
+import "./whatsappForm.css"
 import { WidgetContext } from './context/widgetContext';
 import { LoginContext } from './context/loginContext';
 
 const App = (props) => {
 
-    const { utms, processUtms, fetchWhatsappNumber, whatsappNumber } = useContext(WidgetContext)
-    const { fetchPassword, password } = useContext (LoginContext)
+    const { processUtms, fetchWhatsappNumber, whatsappNumber, whatsappOpen } = useContext(WidgetContext)
+    const { fetchPassword, password } = useContext(LoginContext)
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log("renderizada")
     })
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        if (sessionStorage.getItem("utmsConcatenated")){
+        if (sessionStorage.getItem("utmsConcatenated")) {
             let utmsConcat = sessionStorage.getItem('utmsConcatenated')
             processUtms(utmsConcat)
-            console.log("Las UTMS son: "+utmsConcat)
+            console.log("Las UTMS son: " + utmsConcat)
 
-        }else{
+        } else {
             let queryString = window.location.search;
-            sessionStorage.setItem("utmsConcatenated",queryString)
+            sessionStorage.setItem("utmsConcatenated", queryString)
             processUtms(queryString)
-            console.log("Las UTMS son: "+queryString)
+            console.log("Las UTMS son: " + queryString)
         }
-    },[])
+    }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchPassword(props.password)
     }, [password])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchWhatsappNumber(props.whatsapp)
-    },[whatsappNumber])
+    }, [whatsappNumber])
 
     return (
-        <div className="container">
+        <Fragment>
             <WhatsappForm seleccion={props.selector}></WhatsappForm>
             <InitialButton></InitialButton>
-        </div>
+            <div id="overlay" className={whatsappOpen ? " active" : ""}></div>
+        </Fragment>
     );
 };
 

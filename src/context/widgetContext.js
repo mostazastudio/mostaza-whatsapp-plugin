@@ -8,8 +8,6 @@ const WidgetProvider = ({children}) =>{
     const [whatsappOpen, setWhatsappOpen]           = useState(false)
     const [utms, setUtms]                           = useState({})
     const [whatsappNumber, setWhatsappNumber]       = useState("")
-    /*const [opcionesSelector, setOpcionesSelector]   = useState([{}])*/
-
 
     const fetchWhatsappNumber = (numero) => {
         console.log("numerooo cifrado: "+numero)
@@ -18,14 +16,6 @@ const WidgetProvider = ({children}) =>{
         console.log("numero descifrado: "+originalText)
         setWhatsappNumber(originalText)
     }
-
-    /*const fetchOpcionesSelector = (lista_opciones) =>{
-        var bytes = CryptoJS.AES.decrypt(lista_opciones, 'greenbaypackers');
-        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-        var dss = JSON.parse(decryptedData)
-        console.log(typeof dss)
-        setOpcionesSelector(dss)
-    }*/
 
     const openWhatsapp = () => {
         setWhatsappOpen(!whatsappOpen)

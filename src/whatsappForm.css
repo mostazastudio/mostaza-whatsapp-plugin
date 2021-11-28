@@ -117,7 +117,7 @@
     -moz-appearance: none; /* Firefox */
     webkit-appearance: none; /* Safari and Chrome */
     appearance: none;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMDY2MjcgNS42MjVMNy43NzEwOSA5LjM3NUwxMS40NzU5IDUuNjI1IiBzdHJva2U9IiMwMDhEN0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
+    background-image: url("./components/arrow.svg");
     background-repeat: no-repeat;
     background-position-x: 96%;
     background-position-y: 14px;
@@ -132,7 +132,7 @@
 
 .modal-form .row select:focus {
     background: #fff;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMDY2MjcgNS42MjVMNy43NzEwOSA5LjM3NUwxMS40NzU5IDUuNjI1IiBzdHJva2U9IiMwMDhEN0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
+    background-image: url("./components/arrow.svg");
     background-repeat: no-repeat;
     background-position-x: 96%;
     background-position-y: 14px;
