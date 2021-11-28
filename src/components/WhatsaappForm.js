@@ -4,7 +4,7 @@ import validate from './validateForm';
 import '../whatsappForm.css';
 import { WidgetContext } from '../context/widgetContext';
 import CryptoJS from 'crypto-js';
-import logoFull from "./whatsapp-logo-complete.svg"
+import logo from "./whatsapp-logo.svg"
 
 
 const WhatsappForm = (props) => {
@@ -22,7 +22,7 @@ const WhatsappForm = (props) => {
     return (
         <div className={`modal${whatsappOpen ? " active" : ""}`} id="modal">
         <div className="modal-header">
-          <img src={logoFull} alt="WhatsApp logo" />
+          <img src={logo} alt="WhatsApp logo" />
           <span data-close-button className="close-button" onClick={() => openWhatsapp()}>×</span>
         </div>
         <div className="modal-footer">
@@ -49,7 +49,7 @@ const WhatsappForm = (props) => {
               </select>
               {formErrors.motivo && <p>{formErrors.motivo}</p>}
             </div>
-            <input type="submit" defaultValue="Enviar y contactar un asesor" />
+            <input type="submit" value="Chatear con un asesor" />
           </form>
         </div>
       </div>

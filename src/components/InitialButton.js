@@ -10,7 +10,7 @@ const InitialButton = () => {
     return (
     <div className="btn-widget-wp" onClick={() => openWhatsapp()}>
         <img src={logo} alt="WhatsApp logo"/>
-        <span>Contacta un asesor</span>
+        <span>Chatear con un asesor</span>
     </div>
     );
 };
