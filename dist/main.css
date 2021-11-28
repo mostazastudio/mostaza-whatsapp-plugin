@@ -4,8 +4,8 @@
 }
 
 .error{
-    color: #B8312A;
-    font-size: 10px;
+    color: #B8312A !important;
+    font-size: 10px !important;
 }
 
 .modal {
