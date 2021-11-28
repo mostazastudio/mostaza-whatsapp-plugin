@@ -20,7 +20,7 @@ const WhatsappForm = (props) => {
     }
     
     return (
-        <div className={`modal${whatsappOpen ? " active" : ""}`} id="modal">
+        <div className={`sheloh-modal${whatsappOpen ? " active" : ""}`} id="modal">
         <div className="modal-header">
           <img src={logo} alt="WhatsApp logo" />
           <span data-close-button className="close-button" onClick={() => openWhatsapp()}>×</span>
