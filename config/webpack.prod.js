@@ -11,11 +11,13 @@ const prodConfig = {
             chunks:"all",
         }
     },*/
-    plugins:[ new MiniCssExtractPlugin()],
+    plugins:[ new MiniCssExtractPlugin({
+        filename: "[name].[contenthash].css"
+    })],
     module:{
         rules:[{
             use:[MiniCssExtractPlugin.loader, "css-loader"],
-            test:/.(css)$/,
+            test:/.(css)$/
         },
         {
             type: "asset",    
