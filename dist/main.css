@@ -3,6 +3,11 @@
     font-family: 'Manrope', sans-serif;
 }
 
+.error{
+    color: #B8312A;
+    font-size: 10px;
+}
+
 .modal {
     position: fixed;
     right: 48px;

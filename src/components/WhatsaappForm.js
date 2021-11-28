@@ -34,12 +34,12 @@ const WhatsappForm = (props) => {
             <div className="row">
               <label htmlFor="name">Nombre</label>
               <input type="text" placeholder="Escribe tu nombre" name="nombre" value={values.nombre} required onChange={handleChange} />
-              {formErrors.nombre && <p>{formErrors.nombre}</p>}
+              {formErrors.nombre && <p className="error">{formErrors.nombre}</p>}
             </div>
             <div className="row">
               <label htmlFor="phone">Teléfono</label>
               <input type="tel" name="celular" value={values.celular} placeholder="Escribe tu número de teléfono" required onChange={handleChange} />
-              {formErrors.celular && <p>{formErrors.celular}</p>}
+              {formErrors.celular && <p className="error">{formErrors.celular}</p>}
             </div>
             <div className="row">
               <label htmlFor="help">Tipo de ayuda</label>
@@ -47,7 +47,7 @@ const WhatsappForm = (props) => {
                 <option value disabled selected>--</option>
                 {fetchOpcionesSelector(props.seleccion).map(e => <option>{e.opcion}</option>)}
               </select>
-              {formErrors.motivo && <p>{formErrors.motivo}</p>}
+              {formErrors.motivo && <p className="error">{formErrors.motivo}</p>}
             </div>
             <input type="submit" value="Chatear con un asesor" />
           </form>
