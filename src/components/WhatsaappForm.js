@@ -21,16 +21,16 @@ const WhatsappForm = (props) => {
     
     return (
         <div className={`sheloh-modal${whatsappOpen ? " active" : ""}`} id="modal">
-        <div className="modal-header">
+        <div className="sheloh-modal-header">
           <img src={logo} alt="WhatsApp logo" />
           <span data-close-button className="close-button" onClick={() => openWhatsapp()}>×</span>
         </div>
-        <div className="modal-footer">
-          <div className="modal-intro">
+        <div className="sheloh-modal-footer">
+          <div className="sheloh-modal-intro">
             <span>👋 Hola!</span>
             <p>Completa tus datos para contactar un asesor.</p>
           </div>
-          <form action="#" className="modal-form" onSubmit={handleSubmit}>
+          <form action="#" className="sheloh-modal-form" onSubmit={handleSubmit}>
             <div className="row">
               <label htmlFor="name">Nombre</label>
               <input type="text" placeholder="Escribe tu nombre" name="nombre" value={values.nombre} required onChange={handleChange} />

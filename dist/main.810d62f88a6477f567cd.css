@@ -29,7 +29,7 @@
     transform: scale(1);
 }
 
-#mostaza-sheloh-wp-widget .modal-header {
+#mostaza-sheloh-wp-widget .sheloh-modal-header {
     padding: 20px 32px;
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@
     background: #445A64;
 }
 
-#mostaza-sheloh-wp-widget .modal-header .close-button {
+#mostaza-sheloh-wp-widget .sheloh-modal-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -47,31 +47,31 @@
     color: #fff;
 }
 
-#mostaza-sheloh-wp-widget .modal-footer {
+#mostaza-sheloh-wp-widget .sheloh-modal-footer {
     padding: 0 30px;
 }
 
-#mostaza-sheloh-wp-widget .modal-intro {
+#mostaza-sheloh-wp-widget .sheloh-modal-intro {
     text-align: center;
     margin: 30px 0;
 }
 
-#mostaza-sheloh-wp-widget .modal-intro span {
+#mostaza-sheloh-wp-widget .sheloh-modal-intro span {
     font-weight: bold;
     font-size: 16px;
     color: #445A64;
 }
-#mostaza-sheloh-wp-widget .modal-intro p {
+#mostaza-sheloh-wp-widget .sheloh-modal-intro p {
     font-weight: 600;
     font-size: 13px;
     color: #7C8C93;
 }
 
-#mostaza-sheloh-wp-widget .modal-form {
+#mostaza-sheloh-wp-widget .sheloh-modal-form {
     width: 100%;
 }
 
-#mostaza-sheloh-wp-widget .modal-form label {
+#mostaza-sheloh-wp-widget .sheloh-modal-form label {
     display: block;
     font-weight: bold;
     font-size: 12px;
@@ -79,11 +79,11 @@
     margin-bottom: 17px;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row {
     margin-bottom: 17px;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row input {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row input {
     width: 100%;
     background: #ECEFF0;
     border: 1px solid #DADEE0;
@@ -96,20 +96,20 @@
     transition: all 0.3s ease-out;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row input:focus {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row input:focus {
     background: #fff;
     outline: none;
     box-shadow: 0 0 10px #445a6417;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row input::placeholder {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row input::placeholder {
     font-style: normal;
     font-weight: lighter;
     font-size: 14px;
     color: #7C8C93;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row select {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row select {
     width: 100%;
     background-color: #ECEFF0;
     border: 1px solid #DADEE0;
@@ -129,14 +129,14 @@
     background-position-y: 14px;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row select::placeholder {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row select::placeholder {
     font-style: normal;
     font-weight: lighter;
     font-size: 13px;
     color: #7C8C93;
 }
 
-#mostaza-sheloh-wp-widget .modal-form .row select:focus {
+#mostaza-sheloh-wp-widget .sheloh-modal-form .row select:focus {
     background: #fff;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMDY2MjcgNS42MjVMNy43NzEwOSA5LjM3NUwxMS40NzU5IDUuNjI1IiBzdHJva2U9IiMwMDhEN0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
     background-repeat: no-repeat;
@@ -146,7 +146,7 @@
     box-shadow: 0 0 10px #445a6417;
 }
 
-#mostaza-sheloh-wp-widget .modal-form input[type=submit] {
+#mostaza-sheloh-wp-widget .sheloh-modal-form input[type=submit] {
     background: #14D470;
     border: 0;
     cursor: pointer;
@@ -161,7 +161,7 @@
     transition: all 0.3s ease-out;
 }
 
-#mostaza-sheloh-wp-widget .modal-form input[type=submit]:hover {
+#mostaza-sheloh-wp-widget .sheloh-modal-form input[type=submit]:hover {
     background: #1CEA7E;
 }
 
@@ -223,7 +223,7 @@
     #mostaza-sheloh-wp-widget .btn-widget-wp span {
         font-size: 12px;
     }
-    #mostaza-sheloh-wp-widget .modal {
+    #mostaza-sheloh-wp-widget .sheloh-modal {
         margin-left: auto;
         margin-right: auto;
         left: 0;
@@ -232,22 +232,22 @@
         max-width: 100%;
         bottom: 20px;
     }
-    #mostaza-sheloh-wp-widget .modal-header {
+    #mostaza-sheloh-wp-widget .sheloh-modal-header {
         padding: 14px 22px;
     }
-    #mostaza-sheloh-wp-widget .modal-footer {
+    #mostaza-sheloh-wp-widget .sheloh-modal-footer {
         padding: 0 22px;
     }
-    #mostaza-sheloh-wp-widget .modal-intro {
+    #mostaza-sheloh-wp-widget .sheloh-modal-intro {
         margin: 20px ​0 30px;
     }
-    #mostaza-sheloh-wp-widget .modal-intro p {
+    #mostaza-sheloh-wp-widget .sheloh-modal-intro p {
         font-size: 12px;
     }
-    #mostaza-sheloh-wp-widget .modal-form label {
+    #mostaza-sheloh-wp-widget .sheloh-modal-form label {
         margin-bottom: 8px;
     }
-    #mostaza-sheloh-wp-widget .modal-form input[type=submit] {
+    #mostaza-sheloh-wp-widget .sheloh-modal-form input[type=submit] {
         margin-top: 5px;
     }
 }
