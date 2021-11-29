@@ -56,9 +56,9 @@ const useForm = (validate) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
         console.log("ya preventio el default")
-        setFormErrors(validate(values));
+        await setFormErrors(validate(values));
         console.log("ya seteo errores")
-        setIsSubmitting(true);
+        await setIsSubmitting(true);
         console.log("ya seteo sumbitting to true")
         console.log(formErrors)
         console.log(Object.keys(formErrors).length)
