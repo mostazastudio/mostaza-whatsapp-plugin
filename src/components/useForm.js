@@ -57,11 +57,10 @@ const useForm = (validate) =>{
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
-        /*setFormErrors(validate(values));*/
         setIsSubmitting(true);
         console.log(formErrors)
         console.log(Object.keys(formErrors).length)
-        if(Object.keys(formErrors).length === 0){
+        if(Object.keys(formErrors).length === 0 && isSubmitting){
             console.log("antes de Sendwhatsapp data")
             sendWhatsappData()
             window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()

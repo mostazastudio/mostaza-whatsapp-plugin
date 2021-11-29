@@ -13,7 +13,7 @@ export default function validateForm(name,value){
         }
     }
     if (name === "motivo"){
-        if (value.length < 2){
+        if (!value){
             errors.motivo = "por favor selecciona tipo de ayuda"
         }
     }
