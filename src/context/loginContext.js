@@ -12,9 +12,7 @@ const LoginProvider = ({children}) => {
 
 
     const fetchPassword = (clave) => {
-        console.log(typeof clave)
         var decripted = CryptoJS.AES.decrypt(clave, "greenbaypackers")
-        console.log(decripted)
         var originalText = decripted.toString(CryptoJS.enc.Utf8)
         setPassword(originalText)
     }
