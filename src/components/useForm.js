@@ -60,6 +60,8 @@ const useForm = (validate) =>{
         console.log("ya seteo errores")
         setIsSubmitting(true);
         console.log("ya seteo sumbitting to true")
+        console.log(formErrors)
+        console.log(Object.keys(formErrors).length)
         if(Object.keys(formErrors).length === 0 && isSubmitting){
             console.log("antes de Sendwhatsapp data")
             sendWhatsappData()
