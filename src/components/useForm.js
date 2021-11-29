@@ -50,7 +50,7 @@ const useForm = (validate) =>{
             ...values,
             [name]:value
         })
-        setFormErrors(validate(value));
+        setFormErrors(validate({[name]:value}));
         
     }
 
