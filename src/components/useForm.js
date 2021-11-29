@@ -23,10 +23,12 @@ const useForm = (validate) =>{
         console.log("empezando la funcion de sendWhatsappData")
         const pedir_token = await fetchToken()
         const tokenSession = sessionStorage.getItem("whatsappWidgetToken")
+        const urlPath = window.location.pathname
+        console.log(urlPath)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json", Authorization: "Bearer " + tokenSession },
-            body: JSON.stringify({"nombre":values.nombre,"celular":values.celular,"tipo_contacto":values.motivo,...utms})
+            body: JSON.stringify({"nombre":values.nombre,"celular":values.celular,"tipo_contacto":values.motivo,"urlPath":urlPath,...utms})
         }
         console.log(requestOptions)
         console.log("voy a hacer la peticion de sendWhatsappData")
@@ -60,7 +62,7 @@ const useForm = (validate) =>{
     useEffect(()=>{
         if(Object.keys(formErrors).length === 0 && isSubmitting){
             sendWhatsappData()
-            window.open(`https://api.whatsapp.com/send?phone=57${whatsappNumber}&text=${values.motivo}`, '_blank').focus()
+            window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
         }
     },[formErrors])
 
