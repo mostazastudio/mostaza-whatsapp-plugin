@@ -29,7 +29,7 @@ const WhatsappForm = (props) => {
         <div className="sheloh-modal-footer">
           <div className="sheloh-modal-intro">
             <span>👋 Hola!</span>
-            <p>Completa tus datos para contactar un asesor.</p>
+            <p>Completa tus datos para conectarte con un asesor.</p>
           </div>
           <form action="#" className="sheloh-modal-form" onSubmit={handleSubmit}>
             <div className="row">

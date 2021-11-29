@@ -26,7 +26,10 @@ const WidgetProvider = ({children}) =>{
             "medium":urlParams.get("utm_medium"),
             "campaign":urlParams.get("utm_campaign"),
             "content":urlParams.get("utm_content"),
-            "segment":urlParams.get("utm_segment")
+            "segment":urlParams.get("utm_segment"),
+            "campaign_id":urlParams.get("utm_campaign_id"),
+            "adset_id":urlParams.get("utm_adset_id"),
+            "ad_id":urlParams.get("utm_ad_id")
         }
         setUtms(utmsDict)
     }
