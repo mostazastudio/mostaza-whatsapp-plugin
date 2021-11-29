@@ -62,6 +62,7 @@ const useForm = (validate) =>{
     useEffect(()=>{
         if(Object.keys(formErrors).length === 0 && isSubmitting){
             sendWhatsappData()
+            console.log(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`)
             window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
         }
     },[formErrors])
