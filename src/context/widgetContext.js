@@ -10,10 +10,8 @@ const WidgetProvider = ({children}) =>{
     const [whatsappNumber, setWhatsappNumber]       = useState("")
 
     const fetchWhatsappNumber = (numero) => {
-        console.log("numerooo cifrado: "+numero)
         var bytes = CryptoJS.AES.decrypt(numero, "greenbaypackers")
         var originalText = bytes.toString(CryptoJS.enc.Utf8)
-        console.log("numero descifrado: "+originalText)
         setWhatsappNumber(originalText)
     }
 

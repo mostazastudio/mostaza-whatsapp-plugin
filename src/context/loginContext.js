@@ -12,19 +12,16 @@ const LoginProvider = ({children}) => {
 
 
     const fetchPassword = (clave) => {
-        console.log("contrasena cifrada: "+clave)
         console.log(typeof clave)
         var decripted = CryptoJS.AES.decrypt(clave, "greenbaypackers")
         console.log(decripted)
         var originalText = decripted.toString(CryptoJS.enc.Utf8)
-        console.log("contraseña descrifrada: "+originalText)
         setPassword(originalText)
     }
     
     const fetchToken = async () => {
         const username = window.location.hostname
         console.log(username)
-        console.log(password)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded"},

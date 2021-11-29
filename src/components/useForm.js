@@ -24,16 +24,13 @@ const useForm = (validate) =>{
         const pedir_token = await fetchToken()
         const tokenSession = sessionStorage.getItem("whatsappWidgetToken")
         const urlPath = window.location.pathname
-        console.log(urlPath)
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json", Authorization: "Bearer " + tokenSession },
             body: JSON.stringify({"nombre":values.nombre,"celular":values.celular,"tipo_contacto":values.motivo,"urlPath":urlPath,...utms})
         }
         console.log(requestOptions)
-        console.log("voy a hacer la peticion de sendWhatsappData")
         const response = await fetch("https://sheloh-api-feca4.ondigitalocean.app/prospectos", requestOptions)
-        console.log("ya hice la peticion de sendWhatsappData")
         const data = await response.json()
 
         if(!response.ok){
@@ -60,20 +57,11 @@ const useForm = (validate) =>{
         setIsSubmitting(true);
         console.log(formErrors)
         if(Object.values(formErrors).every(x => (x === null || x === ''))){
-            console.log("antes de Sendwhatsapp data")
             sendWhatsappData()
             window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
         }
 
     }
-
-    /*useEffect(()=>{
-        if(Object.keys(formErrors).length === 0 && isSubmitting){
-            sendWhatsappData()
-            console.log(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`)
-            window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
-        }
-    },[formErrors])*/
 
     return {handleChange, values, handleSubmit, formErrors};
 }
