@@ -50,12 +50,14 @@ const useForm = (validate) =>{
             ...values,
             [name]:value
         })
+        setFormErrors(validate(values));
+        
     }
 
     const handleSubmit = async (e) =>{
         console.log("empezando la funcion de handleSubmit")
         e.preventDefault()
-        setFormErrors(validate(values));
+        /*setFormErrors(validate(values));*/
         setIsSubmitting(true);
         console.log(formErrors)
         console.log(Object.keys(formErrors).length)
