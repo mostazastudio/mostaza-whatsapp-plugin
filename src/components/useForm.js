@@ -29,7 +29,6 @@ const useForm = (validate) =>{
             headers: { "Content-Type": "application/json", Authorization: "Bearer " + tokenSession },
             body: JSON.stringify({"nombre":values.nombre,"celular":values.celular,"tipo_contacto":values.motivo,"urlPath":urlPath,...utms})
         }
-        console.log(requestOptions)
         const response = await fetch("https://sheloh-api-feca4.ondigitalocean.app/prospectos", requestOptions)
         const data = await response.json()
 

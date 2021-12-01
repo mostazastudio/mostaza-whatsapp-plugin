@@ -28,7 +28,7 @@ const WhatsappForm = (props) => {
         </div>
         <div className="mostaza-sheloh-wp-widget__wModal-footer">
           <div className="mostaza-sheloh-wp-widget__wModal-footer-intro">
-            <span>👋 Hola!</span>
+            <span>👋  Hola!</span>
             <p>Completa tus datos para conectarte con un asesor.</p>
           </div>
           <form action="#" className="mostaza-sheloh-wp-widget__wModal-form" onSubmit={handleSubmit}>

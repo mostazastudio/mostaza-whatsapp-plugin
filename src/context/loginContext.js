@@ -27,7 +27,6 @@ const LoginProvider = ({children}) => {
         };
         const response = await fetch("https://sheloh-api-feca4.ondigitalocean.app/marcas/token", requestOptions);
         const data = await response.json();
-        console.log(data)
 
         if(!response.ok){
             setErrorMessage(data.detail)
