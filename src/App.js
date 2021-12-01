@@ -35,7 +35,7 @@ const App = (props) => {
         <div id="mostaza-sheloh-wp-widget">
             <WhatsappForm seleccion={props.selector}></WhatsappForm>
             <InitialButton></InitialButton>
-            <div id="overlay" className={whatsappOpen ? " active" : ""}></div>
+            <div id="mostaza-sheloh-wp-widget__overlay" className={whatsappOpen ? " active" : ""}></div>
         </div>
     );
 };

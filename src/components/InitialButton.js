@@ -8,9 +8,9 @@ const InitialButton = () => {
     const { openWhatsapp } = useContext(WidgetContext)
 
     return (
-    <div className="btn-widget-wp" onClick={() => openWhatsapp()}>
+    <div className="mostaza-sheloh-wp-widget__btnWidgetWp" onClick={() => openWhatsapp()}>
         <img src={logo} alt="WhatsApp logo"/>
-        <span>Chatear con un asesor</span>
+        <span className="mostaza-sheloh-wp-widget__btnWidgetWp-label">Chatear con un asesor</span>
     </div>
     );
 };

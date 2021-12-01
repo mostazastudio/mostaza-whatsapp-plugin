@@ -20,29 +20,29 @@ const WhatsappForm = (props) => {
     }
     
     return (
-        <div className={`sheloh-modal${whatsappOpen ? " active" : ""}`} id="modal">
-        <div className="sheloh-modal-header">
+        <div className={`mostaza-sheloh-wp-widget__wModal${whatsappOpen ? " active" : ""}`} id="mostaza-sheloh-wp-widget__modal">
+        <div className="mostaza-sheloh-wp-widget__wModal-header">
           <img src={logo} alt="WhatsApp logo" />
-          <span className="sheloh-logo-name">Whatsapp</span>
-          <span data-close-button className="close-button" onClick={() => openWhatsapp()}>×</span>
+          <span className="mostaza-sheloh-wp-widget__wModal-header-title">Whatsapp</span>
+          <span data-close-button className="close-button-wModal" onClick={() => openWhatsapp()}>×</span>
         </div>
-        <div className="sheloh-modal-footer">
-          <div className="sheloh-modal-intro">
+        <div className="mostaza-sheloh-wp-widget__wModal-footer">
+          <div className="mostaza-sheloh-wp-widget__wModal-footer-intro">
             <span>👋 Hola!</span>
             <p>Completa tus datos para conectarte con un asesor.</p>
           </div>
-          <form action="#" className="sheloh-modal-form" onSubmit={handleSubmit}>
-            <div className="row">
+          <form action="#" className="mostaza-sheloh-wp-widget__wModal-form" onSubmit={handleSubmit}>
+            <div className="mostaza-sheloh-wp-widget__wModal-form-row">
               <label htmlFor="name">Nombre</label>
               <input type="text" placeholder="Escribe tu nombre" name="nombre" value={values.nombre} required onChange={handleChange} />
               {formErrors.nombre && <p className="error">{formErrors.nombre}</p>}
             </div>
-            <div className="row">
+            <div className="mostaza-sheloh-wp-widget__wModal-form-row">
               <label htmlFor="phone">Teléfono</label>
               <input type="tel" name="celular" value={values.celular} placeholder="Escribe tu número de teléfono" required onChange={handleChange} />
               {formErrors.celular && <p className="error">{formErrors.celular}</p>}
             </div>
-            <div className="row">
+            <div className="mostaza-sheloh-wp-widget__wModal-form-row">
               <label htmlFor="help">Tipo de ayuda</label>
               <select name="help" name="motivo" required onChange={handleChange}>
                 <option value disabled selected>--</option>
