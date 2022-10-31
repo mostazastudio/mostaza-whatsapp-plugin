@@ -57,7 +57,7 @@ const useForm = (validate) =>{
         console.log(formErrors)
         if(Object.values(formErrors).every(x => (x === null || x === ''))){
             sendWhatsappData()
-            window.open(`https://wa.me/57${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
+            window.open(`https://wa.me/${whatsappNumber}?text=${values.motivo}`, '_blank').focus()
         }
 
     }

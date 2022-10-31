@@ -1,5 +1,6 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 const path = require("path");
 
 /** @type {import('webpack').Configuration}*/
@@ -25,6 +26,10 @@ module.exports ={
                 use:"babel-loader",
                 test: /.(js|jsx)$/,
                 exclude:/node_modules/
+            },
+            {
+                type: "asset",    
+                test:/\.(svg)$/i,
             }
         ]
     },

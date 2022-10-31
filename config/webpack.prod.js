@@ -6,11 +6,11 @@ const common = require("./webpack.common");
 /** @type {import('webpack').Configuration}*/
 const prodConfig = {
     mode:"production",
-    /*optimization:{
+    optimization:{
         splitChunks:{
             chunks:"all",
         }
-    },*/
+    },
     plugins:[ new MiniCssExtractPlugin({
         filename: "[name].[contenthash].css"
     })],
@@ -18,11 +18,11 @@ const prodConfig = {
         rules:[{
             use:[MiniCssExtractPlugin.loader, "css-loader"],
             test:/.(css)$/
-        },
+        }/*,
         {
             type: "asset",    
             test:/\.(svg)$/i,
-        }
+        }*/
     
     ]
     }
